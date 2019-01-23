@@ -1,0 +1,23 @@
+{
+  "name": "grunt-cypress",
+  "version": "1.0.0",
+  "description": "A grunt wrapper for Cypress, a test runner for your projects",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurenhamel/grunt-cypress.git"
+  },
+  "keywords": [
+    "grunt",
+    "cypress",
+    "testing",
+    "test-runner",
+    "test-tools"
+  ],
+  "author": "Lauren Hamel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laurenhamel/grunt-cypress/issues"
+  },
+  "homepage": "https://github.com/laurenhamel/grunt-cypress#readme"
+}
