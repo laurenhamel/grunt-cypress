@@ -14,7 +14,7 @@ npm install grunt-cypress --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```
-grunt.task.loadNpmTasks('grunt-cypress');
+grunt.loadNpmTasks('grunt-cypress');
 ```
 
 ## Usage
