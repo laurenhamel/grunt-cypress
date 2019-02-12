@@ -18,7 +18,8 @@ module.exports = (grunt) => {
     
      // Get arguments and options.
     const args = [...arguments];
-    const opts = grunt.option.flags();
+    const opts = grunt.option.flags()
+      .filter(option => !option.includes('--gruntfile') );
     
     // Use the open method by default.
     if( args.length === 0 ) args.push('open');
