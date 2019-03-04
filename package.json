@@ -22,10 +22,11 @@
     "url": "https://github.com/laurenhamel/grunt-cypress/issues"
   },
   "homepage": "https://github.com/laurenhamel/grunt-cypress#readme",
-  "dependencies": {
-    "cypress": "^3.1.4"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "fs-extra": "^7.0.1"
+    "chalk": "^2.4.2",
+    "cypress": "^3.1.5",
+    "fs-extra": "^7.0.1",
+    "grunt": "^1.0.3"
   }
 }

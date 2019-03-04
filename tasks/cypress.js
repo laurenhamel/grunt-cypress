@@ -16,6 +16,24 @@ module.exports = (grunt) => {
     // Make asynchronous.
     const done = this.async();
     
+    // Verify that the Cypress is available.
+    try { require.resolve('cypress'); }
+  
+    // Otherwise, throw an error.
+    catch(error) {
+      
+      // Alert the user that Cypress could not be found.
+      grunt.log.error('Cypress could not be found.',
+                      'Run `npm i cypress --save-dev`, then try again.');
+      
+      // Exit the Grunt task.
+      done();
+      
+      // Stop running.
+      return;
+      
+    }
+    
      // Get arguments and options.
     const args = [...arguments];
     const opts = grunt.option.flags();
