@@ -16,7 +16,7 @@ module.exports = (grunt) => {
     // Make asynchronous.
     const done = this.async();
     
-    // Verify that the Cypress is available.
+    // Verify that Cypress is available.
     try { require.resolve('cypress'); }
   
     // Otherwise, throw an error.
@@ -34,12 +34,31 @@ module.exports = (grunt) => {
       
     }
     
-     // Get arguments and options.
-    const args = [...arguments];
-    const opts = grunt.option.flags();
+    // Define blacklist of Grunt-specific options.
+    const blacklist = [
+      '--base',
+      '--no-color',
+      '--gruntfile',
+      '--stack',
+      '--force',
+      '--tasks',
+      '--npm',
+      '--no-write',
+      '--verbose',
+      '--debug',
+      '--completion',
+      '--require'
+    ];
     
+     // Get arguments and options.
+    let args = [...arguments];
+    let opts = grunt.option.flags();
+
     // Use the open method by default.
     if( args.length === 0 ) args.push('open');
+    
+    // Filter out Grunt options.
+    opts = opts.filter((opt) => !blacklist.includes(opt.split('=')[0]));
 
     // Configure options.
     if( args.length > 0 ) {
